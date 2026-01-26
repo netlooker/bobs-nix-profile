@@ -7,6 +7,11 @@
     prefix=${config.home.homeDirectory}/.npm-global
   '';
 
+  # Add npm global bin to PATH for ALL shells (interactive and non-interactive)
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.npm-global/bin"
+  ];
+
   programs.fish = {
     enable = true;
     plugins = [
@@ -14,8 +19,6 @@
     interactiveShellInit = ''
       eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
       set fish_greeting
-      # Add npm global bin to PATH
-      fish_add_path ~/.npm-global/bin
       # Rebind fzf file search from Ctrl+T to Ctrl+F (Ctrl+T is Tilix new tab)
       bind \cf fzf-file-widget
       bind -e \ct
