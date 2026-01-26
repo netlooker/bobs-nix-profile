@@ -46,6 +46,6 @@
     libcanberra-gtk3
     
     # Node.js
-    nodejs_22
+    nodejs
   ];
 }
