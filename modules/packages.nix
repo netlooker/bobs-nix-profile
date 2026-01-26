@@ -44,5 +44,8 @@
     
     # GTK fix
     libcanberra-gtk3
+    
+    # Node.js
+    nodejs_22
   ];
 }

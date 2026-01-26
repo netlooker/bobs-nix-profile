@@ -1,14 +1,21 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
+  # FIX: Tell npm exactly where to install packages using the absolute path.
+  # This creates a ~/.npmrc file automatically.
+  home.file.".npmrc".text = ''
+    prefix=${config.home.homeDirectory}/.npm-global
+  '';
+
   programs.fish = {
     enable = true;
     plugins = [
-      { name = "nvm.fish"; src = pkgs.fishPlugins.nvm.src; }
     ];
     interactiveShellInit = ''
       eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
       set fish_greeting
+      # Add npm global bin to PATH
+      fish_add_path ~/.npm-global/bin
       # Rebind fzf file search from Ctrl+T to Ctrl+F (Ctrl+T is Tilix new tab)
       bind \cf fzf-file-widget
       bind -e \ct
