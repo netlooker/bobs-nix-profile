@@ -3,6 +3,9 @@
 {
   programs.fish = {
     enable = true;
+    plugins = [
+      { name = "nvm.fish"; src = pkgs.fishPlugins.nvm.src; }
+    ];
     interactiveShellInit = ''
       set fish_greeting
       # Rebind fzf file search from Ctrl+T to Ctrl+F (Ctrl+T is Tilix new tab)
