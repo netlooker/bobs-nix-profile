@@ -10,6 +10,7 @@
   # Add npm global bin to PATH for ALL shells (interactive and non-interactive)
   home.sessionPath = [
     "${config.home.homeDirectory}/.npm-global/bin"
+    "${config.home.homeDirectory}/.nix-profile/bin"
   ];
 
   programs.fish = {
