@@ -47,5 +47,10 @@
     
     # Node.js
     nodejs
+
+    # Python ecosystem
+    python3
+    uv
+    python3Packages.pip
   ];
 }
