@@ -7,6 +7,7 @@
       { name = "nvm.fish"; src = pkgs.fishPlugins.nvm.src; }
     ];
     interactiveShellInit = ''
+      eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
       set fish_greeting
       # Rebind fzf file search from Ctrl+T to Ctrl+F (Ctrl+T is Tilix new tab)
       bind \cf fzf-file-widget
