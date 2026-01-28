@@ -31,6 +31,7 @@
     
     # Document conversion
     pandoc
+    texlive.combined.scheme-small
     
     # Git tools
     gitingest
@@ -42,6 +43,9 @@
     # Clipboard tools
     xclip
     
+    # QR code tools
+    qrencode
+    
     # GTK fix
     libcanberra-gtk3
     
@@ -49,8 +53,13 @@
     nodejs
 
     # Python ecosystem
-    python3
+    (python3.withPackages (ps: with ps; [
+      pip
+      python-pptx
+      pandas
+      pillow
+      xlsxwriter
+    ]))
     uv
-    python3Packages.pip
   ];
 }
