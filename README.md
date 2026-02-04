@@ -45,6 +45,15 @@ Applied globally because consistency is king. Your eyes will thank you at 2 AM.
 - **delta** - git diffs that don't look like they're from 1995
 - **btop** - `htop` but prettier
 - **jq** / **yq** - because YAML and JSON are everywhere
+- **just** - command runner for sanity
+
+### 🤖 Agentic Tooling
+Ready for AI engineering out of the box:
+- **Python Data Stack**: `numpy`, `scipy`, `pandas` (system-level optimization)
+- **Media**: `ffmpeg`, `yt-dlp` (audio/video processing)
+- **Vector DB**: `sqlite-vec` (local vector search extension)
+- **Networking**: `tailscale` (secure mesh for exposing agents)
+- **Dev**: `gh` (GitHub CLI), `uv` (Python project manager)
 
 ### 🖥️ Tilix Terminal
 Pre-configured with:

@@ -28,6 +28,7 @@
     tldr
     btop
     ncdu
+    just
     
     # Document conversion
     pandoc
@@ -35,6 +36,7 @@
     
     # Git tools
     gitingest
+    gh
     
     # Data processing
     jq
@@ -52,6 +54,13 @@
     # Node.js
     nodejs
 
+    # Browser
+    chromium
+
+    # Media tools
+    yt-dlp
+    ffmpeg
+
     # Python ecosystem
     (python3.withPackages (ps: with ps; [
       pip
@@ -59,7 +68,16 @@
       pandas
       pillow
       xlsxwriter
+      ml-dtypes
+      scipy
+      numpy
     ]))
     uv
+
+    # SQLite Extensions
+    sqlite-vec
+    
+    # Networking
+    tailscale
   ];
 }
