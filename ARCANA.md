@@ -132,6 +132,29 @@ Yes, it's "impure." No, we don't care. The same flake now works for everyone.
 
 ---
 
+## Chapter 8: The Python Shared Library Nightmare
+
+**The Problem:** Python packages with C-extensions (like `numpy`, `scipy`, `av`) installed via `uv` or `pip` fail to load on NixOS. Errors like `ImportError: libstdc++.so.6: cannot open shared object file` or `libz.so.1` missing.
+
+**The Revelation:** Standard Nix environments don't expose common shared libraries to non-Nix binaries. Python venvs are effectively "foreign" to the host.
+
+**The Solution:** Manually locate the libraries in the Nix store and export `LD_LIBRARY_PATH` in your start script:
+
+```bash
+# Locate the path
+find /nix/store -name libstdc++.so.6 | grep gcc
+
+# Add to your start script
+export LD_LIBRARY_PATH="/nix/store/...-gcc-lib/lib:/nix/store/...-zlib/lib:$LD_LIBRARY_PATH"
+```
+
+**Common Offenders:**
+- `libstdc++.so.6` (GCC)
+- `libz.so.1` (Zlib)
+- `libgl.so.1` (OpenGL/OpenCV)
+
+---
+
 ## Appendix: Catppuccin Mocha Palette
 
 For when you need to manually theme something:
