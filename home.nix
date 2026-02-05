@@ -7,6 +7,7 @@
     ./modules/packages.nix
     ./modules/shell.nix
     ./modules/tilix.nix
+    ./modules/mc.nix
   ];
 
   # Catppuccin theme (global)

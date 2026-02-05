@@ -155,6 +155,21 @@ export LD_LIBRARY_PATH="/nix/store/...-gcc-lib/lib:/nix/store/...-zlib/lib:$LD_L
 
 ---
 
+## Chapter 9: The Midnight Commander (mc) Skin
+
+**The Problem:** Default Midnight Commander looks like a leftover from 1994.
+
+**The Solution:** Managed skin file via Nix and environment variable.
+
+```nix
+xdg.configFile."mc/skins/catppuccin-mocha.ini".source = ./skins/catppuccin-mocha.ini;
+home.sessionVariables.MC_SKIN = "catppuccin-mocha";
+```
+
+Note: If the skin doesn't load automatically, press `F9` -> `Options` -> `Appearance` and select `catppuccin-mocha`.
+
+---
+
 ## Appendix: Catppuccin Mocha Palette
 
 For when you need to manually theme something:
